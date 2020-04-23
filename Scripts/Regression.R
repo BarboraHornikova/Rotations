@@ -1,11 +1,6 @@
 source("scripts/Import.R")
 
-# temporary filter for check of R^2
-data = RalliesRotations %>%
-  filter((MarkovCoefLastTouchSideout > 0) & (MarkovCoefLastTouchSideout < 1))
-
-# this is correct
-# data = RalliesRotations
+data = RalliesRotations
 
 m1_a_s = lm(M1_A_S ~ ServingRotation + ReceivingRotation, data = data)
 m2_a_s = lm(M2_A_S ~ ServingRotation + ReceivingRotation, data = data)
